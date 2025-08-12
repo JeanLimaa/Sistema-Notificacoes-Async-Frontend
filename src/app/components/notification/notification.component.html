@@ -1,0 +1,10 @@
+<div class="notification-container">
+    <h2>Notificações</h2>
+    <input [(ngModel)]="messageContent" placeholder="Digite sua mensagem..." />
+    <button (click)="sendNotification()">Enviar notificação</button>
+    <ul>
+        <li *ngFor="let n of notifications">
+            <strong>{{ n.messageId }}</strong>: {{ n.messageContent }} - <span [ngClass]="n.status">{{ mapStatus(n.status) }}</span>
+        </li>
+    </ul>
+</div>
