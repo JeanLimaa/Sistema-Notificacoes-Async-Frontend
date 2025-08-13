@@ -60,6 +60,8 @@ export class NotificationComponent implements OnInit, OnDestroy {
         return 'Notificação processada com sucesso';
       case MessageStatus.NOT_FOUND:
         return 'Notificação não encontrada';
+      case MessageStatus.PROCESSING_FAILURE:
+        return 'Falha no processamento da notificação';
       default:
         return 'Status desconhecido';
     }
