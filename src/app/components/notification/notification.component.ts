@@ -20,7 +20,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
   sendNotification() {
     if (!this.messageContent.trim()) return;
 
-    const messageId = uuidv4();
+    const messageId = this.generateMessageId();
 
     this.notificationService.sendNotification(messageId, this.messageContent).subscribe((res: Notification) => {
       this.notifications.push({ 
@@ -65,5 +65,9 @@ export class NotificationComponent implements OnInit, OnDestroy {
       default:
         return 'Status desconhecido';
     }
+  }
+
+  generateMessageId(): string {
+    return uuidv4();
   }
 }
